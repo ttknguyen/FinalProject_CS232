@@ -1,0 +1,8 @@
+jiwer
+pandas
+numpy
+tensorflow-gpu
+string
+glob
+librosa
+IPython
