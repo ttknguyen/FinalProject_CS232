@@ -73,11 +73,13 @@ def handle_submit(submit, implement_option, uploaded_file):
         if implement_option == 'Custom Model':
             result = speech2text(model, audio_path)
 
-        st.header("RESULT:")
-        st.write(result)
-
+        result_title ="</br><h6 style='text-align: left; font-family:Arial; font-size:15px; color: gray;'>RESULT ⬇️</br></br></h6>"
+        result_text ="<h6 style='text-align: center; font-size:20px; color: black;'>" + result + "</h6>"
+        
+        st.markdown(result_title, unsafe_allow_html=True)
+        st.markdown(result_text, unsafe_allow_html=True)
         _, _, _, _, col, _, _, _, _ = st.columns([1]*8+[1.18])
-        col.button('CLEAR')
+        submit = col.button("CLEAR")
         return
 
 def main_page(input_option, implement_option):
@@ -123,7 +125,7 @@ def audio_record():
     main_page(input_option, implement_option)
 
     # Info about this project
-    sidebar_info = """</br></br></br></br></br></br></br>
+    sidebar_info = """</br></br></br></br></br></br></br></br></br>
                     <h3 style='text-align: left; font-family:Arial; font-size:20px; color: #000000;'>💡About my project</h3>
                     <h6 style='text-align: left; font-family:Arial narrow; font-size:20px; color: gray;'>
                         ⫭ Subject: </br> Introduction to Multimedia Computing</h6>
