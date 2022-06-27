@@ -1,2 +1,7 @@
 model.zip
 model/
+
+Temp/audio.wav
+
+Components/st_audiorec/frontend/node_modules/
+Components/st_audiorec/frontend/package-lock.json
