@@ -18,6 +18,7 @@ import string, glob, os, ffmpeg, scipy, scipy.io.wavfile, IPython
 
 def loadmodel(path):
     model = tf.keras.models.load_model(path, custom_objects={'CTCLoss': CTCLoss})
+    return model
 
 def speech2text(model, audio_file, flat = 'our_model'):
     # The set of characters accepted in the transcription.
@@ -32,7 +33,7 @@ def speech2text(model, audio_file, flat = 'our_model'):
         vocabulary=char_to_num.get_vocabulary(), oov_token="", invert=True
     )
 
-    if flat == 'google':
+    if flat == 'ASR_lib':
         # Use library Speech Recognition
         r = sr.Recognizer()
         my_audio = sr.AudioFile(audio_file)
