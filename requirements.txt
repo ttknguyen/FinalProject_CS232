@@ -6,3 +6,10 @@ string
 glob
 librosa
 IPython
+ffmpeg-python 
+bs4 
+google 
+gtts 
+pygobject 
+pydub 
+SpeechRecognition
